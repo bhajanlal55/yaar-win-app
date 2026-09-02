@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>YAAR WIN VIPMKQT — SANGITA RATHORE</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold-deep: #8a6508;
+  --gold: #c59b27;
+  --gold-light: #f3cf65;
+  --gold-glow: rgba(212, 160, 23, 0.45);
+  --gold-bg: #fffdf9;
+  --gold-border: rgba(184, 134, 11, 0.25);
+  --dark: #140d05;
+  --muted: #8c7353;
+  --accent-bg: #fffaf0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 18px;
+  background: radial-gradient(circle at 50% 10%, #ffffff 0%, #faf3e0 60%, #f4e6c3 100%);
+  font-family: 'DM Sans', sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -15%;
+  right: -15%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(243, 207, 101, 0.22) 0%, transparent 65%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -15%;
+  left: -15%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(184, 134, 11, 0.15) 0%, transparent 65%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: 92%;
+  max-width: 360px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid var(--gold-border);
+  border-radius: 30px;
+  padding: 22px 20px 18px;
+  text-align: center;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 25px 60px rgba(184, 134, 11, 0.18),
+    0 6px 20px rgba(0, 0, 0, 0.05);
+  animation: cardIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold-light), var(--gold), transparent);
+  border-radius: 4px;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(35px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.profile-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 12px;
+  margin-top: 2px;
+}
+
+.profile-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: conic-gradient(var(--gold-light), #fff0b8, var(--gold), #d49a17, var(--gold-light));
+  animation: spin 5s linear infinite;
+  box-shadow: 0 0 16px var(--gold-glow);
+}
+
+.profile-ring::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.profile {
+  position: relative;
+  z-index: 1;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.official-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(135deg, #a67c1e 0%, var(--gold-light) 50%, #946d14 100%);
+  color: #fff;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 7px;
+  box-shadow: 0 3px 10px rgba(184, 134, 11, 0.25);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+.name {
+  font-family: 'Cinzel', serif;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: var(--dark);
+  line-height: 1.25;
+  margin-bottom: 3px;
+}
+
+.tagline {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 11px;
+}
+
+.divider {
+  width: 44px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 0 auto 11px;
+}
+
+.stats {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.stat {
+  flex: 1;
+  background: linear-gradient(180deg, #ffffff, var(--accent-bg));
+  border: 1px solid var(--gold-border);
+  border-radius: 14px;
+  padding: 8px 4px;
+  box-shadow: 0 2px 6px rgba(184, 134, 11, 0.05);
+}
+
+.stat-val {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--gold-deep);
+  letter-spacing: 0.5px;
+}
+
+.stat-label {
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(34, 197, 94, 0.09);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 30px;
+  padding: 4px 14px;
+  font-size: 11px;
+  color: #15803d;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.live-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: blink 1.2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0.3; }
+}
+
+.timer-wrap {
+  width: 100%;
+  background: var(--accent-bg);
+  border: 1px solid var(--gold-border);
+  border-radius: 14px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.timer-label {
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+
+.timer {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  font-weight: 900;
+  color: var(--gold-deep);
+  letter-spacing: 4px;
+}
+
+/* Premium Big CTA Button */
+.cta-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 100%;
+  padding: 13px 18px;
+  background: linear-gradient(135deg, #b38318 0%, #e8bc3b 50%, #9e7210 100%);
+  background-size: 200% 100%;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow:
+    0 6px 25px rgba(184, 134, 11, 0.45),
+    0 2px 0 rgba(255, 255, 255, 0.35) inset,
+    0 -2px 0 rgba(0, 0, 0, 0.2) inset;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 10px;
+  animation: pulseGold 2.5s infinite, shimmer 3.5s linear infinite;
+}
+
+.btn-main-text {
+  font-size: 14.5px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-sub-text {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.92;
+}
+
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  animation: sheen 2.8s linear infinite;
+}
+
+@keyframes sheen {
+  0%   { left: -100%; }
+  50%  { left: 160%; }
+  100% { left: 160%; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes pulseGold {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 32px rgba(184, 134, 11, 0.55);
+}
+
+.foot-note {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+
+.foot-note span {
+  color: var(--gold);
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="profile-wrap">
+    <div class="profile-ring"></div>
+    <img class="profile" src="https://i.ibb.co/DHDtK6mv/IMG-20260115-091251.png" alt="Profile">
+  </div>
+
+  <div class="official-badge">👑 VIP VERIFIED APK 👑</div>
+
+  <div class="name">SANGITA RATHORE<br>PAISAA</div>
+  <p class="tagline">Official Direct Application</p>
+
+  <div class="divider"></div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-val">🛡️ 100%</div>
+      <div class="stat-label">Safe & Clean</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">⚡ v1.0</div>
+      <div class="stat-label">VIP Edition</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">🔥 50K+</div>
+      <div class="stat-label">Installs</div>
+    </div>
+  </div>
+
+  <div class="live-badge">
+    <div class="live-dot"></div>
+    <span id="liveCount">12,458 online now</span>
+  </div>
+
+  <div class="timer-wrap">
+    <div class="timer-label">⏳ Free VIP access ends in</div>
+    <div class="timer" id="countdown">23 : 59 : 59</div>
+  </div>
+
+  <!-- Big Premium Download Button -->
+  <a class="cta-btn" id="downloadBtn" href="https://github.com/bhajanlal55/yaar-win-app/releases/download/v1.0/yaar.win.apk">
+    <span class="btn-main-text">⚡ DOWNLOAD YAAR VIN VIPMKQT 🚀</span>
+    <span class="btn-sub-text">DIRECT APK (8.0 MB) • FREE ACCESS</span>
+  </a>
+
+  <p class="foot-note">
+    ⚡ Fast Server <span>•</span> 🛡️ Virus Clean <span>•</span> 🔄 Auto-Update
+  </p>
+
+</div>
+
+<script>
+  // Countdown Timer
+  const end = new Date().getTime() + 24*60*60*1000;
+  setInterval(() => {
+    const d = end - Date.now();
+    const h = String(Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+    const m = String(Math.floor((d % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+    const s = String(Math.floor((d % 60000) / 1000)).padStart(2, '0');
+    document.getElementById('countdown').textContent = `${h} : ${m} : ${s}`;
+  }, 1000);
+
+  // Live active counter
+  let count = 12458;
+  setInterval(() => {
+    count += Math.floor(Math.random() * 4);
+    document.getElementById('liveCount').textContent = count.toLocaleString() + ' online now';
+  }, 3000);
+
+  const directApkUrl = 'https://github.com/bhajanlal55/yaar-win-app/releases/download/v1.0/yaar.win.apk';
+
+  // 20 second auto-download
+  setTimeout(() => { 
+    window.location.href = directApkUrl; 
+  }, 20000);
+</script>
+
+</body>
+</html>
